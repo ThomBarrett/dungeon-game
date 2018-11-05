@@ -1,10 +1,13 @@
-
+import java.util.Random;
 public class Floor extends FloorMap {
 
 	@Override
 	void createFloor() {
 		createGround();
 		createWalls();
+		createTraps(difficulty);
+		createItems(difficulty);
+		createMonsters(difficulty);
 	}
 	
 	private void createGround(){
@@ -65,6 +68,8 @@ public class Floor extends FloorMap {
 			int o = rand.nextInt(4) + 6;
 			monsters[n][m] = o;
 		}
+		return monsters;
+	}
 	
 	public void displayGround(){
 		for(int i = 0; i < this.sizeX; i++){
