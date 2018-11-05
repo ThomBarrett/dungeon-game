@@ -32,24 +32,24 @@ public class Floor extends FloorMap {
 	
 	// randomly places number 1s on floor representing traps (1 type of trap)
 	private void createTraps(int difficulty){
-		int[][] trapLayer = new int[100][100];
+		trapLayer = new int[sizeX=100][sizeY=100];
 		Random rand = new Random();
 
 		while (difficulty > 0){
-			int n = rand.nextInt(100);
-			int m = rand.nextInt(100);
+			int n = rand.nextInt(this.sizeX);
+			int m = rand.nextInt(this.sizeY);
 			trapLayer[n][m] = 1;
 		}
 		
 	}
 	// randomly places numbers 2-5 on floor representing items (4 types of item)
 	private void createItems(int difficulty){
-		int[][] itemLayer = new int[100][100];
+		itemLayer = new int[sizeX=100][sizeY=100];
 		Random rand = new Random();
 
 		while (difficulty > 0){
-			int n = rand.nextInt(100);
-			int m = rand.nextInt(100);
+			int n = rand.nextInt(this.sizeX);
+			int m = rand.nextInt(this.sizeY);
 			int o = rand.nextInt(5) + 2;
 			itemLayer[n][m] = o;
 		}
@@ -57,12 +57,12 @@ public class Floor extends FloorMap {
 	}
 	// randomly places numbers 6-9 on floor representing monsters (4 types of random monster)
 	private void createMonsters(int difficulty){
-		int[][] enemyLayer = new int[100][100];
+		enemyLayer = new int[sizeX=100][sizeY=100];
 		Random rand = new Random();
 
 		while (difficulty > 0){
-			int n = rand.nextInt(100);
-			int m = rand.nextInt(100);
+			int n = rand.nextInt(this.sizeX);
+			int m = rand.nextInt(this.sizeY);
 			int o = rand.nextInt(4) + 6;
 			enemyLayer[n][m] = o;
 		}
